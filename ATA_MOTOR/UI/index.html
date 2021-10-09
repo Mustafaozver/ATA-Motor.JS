@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<META charset="utf-8" />
+		<META name="viewport" content="width=device-width, initial-scale=1" />
+		<SCRIPT src="https://cdn.socket.io/socket.io-3.0.1.min.js"></SCRIPT>
+		<SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></SCRIPT>
+		<SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></SCRIPT>
+		<SCRIPT src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></SCRIPT>
+		<LINK rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+		<LINK rel="stylesheet" href="./CSS.css" />
+		<SCRIPT src="./JS.js"></SCRIPT>
+		<SCRIPT src="./JS"></SCRIPT>
+	</HEAD>
+	<BODY>
+	
+		<TABLE style="height:100%;width:100%;position:absolute;left:0px;top:0px;background-color:#000000;color:#dddddd;">
+			<TR style="height:30px;"><TD><H3>Trader Robot for Binance By Mustafa ÖZVER</H3></TD></TR>
+			<TR>
+				<TD>
+					<TABLE style="height:100%;width:100%;">
+						<TR style="height:30px;border:1px solid red;">
+							<TD>
+								<BUTTON onclick="windowFrame(0);" class="windowTabButton">0</BUTTON>
+								<br/>
+								Asset = $<font id="asset">0.00</font>
+								Time = <font id="time">00:00</font>
+							</TD>
+						</TR>
+						<TR>
+							<TD class="windowFrames">
+								<IFRAME id="windowFrame_0" src="./0.html" class="windowFrame"></IFRAME>
+							</TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+		<SCRIPT>
+//
+
+function windowFrame(n=0) {
+	var frames = document.getElementsByClassName("windowFrames")[0].children;
+	for (var i=0;i<frames.length;i++){
+		if (frames[i].id == ("windowFrame_"+n)) frames[i].style.display = "block";
+		else frames[i].style.display = "none";
+	}
+}
+
+windowFrame(0);
+
+//
+		</SCRIPT>
+	</BODY>
+</HTML>
